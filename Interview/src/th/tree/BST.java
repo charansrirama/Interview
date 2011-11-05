@@ -5,7 +5,7 @@ public class BST {
 	public Node root = null; // Root node of the tree
 	Node currentNode = root;
 
-	// Checks to see if  is empty. Prints out message if it is.
+	// Checks to see if is empty. Prints out message if it is.
 	public boolean IsEmpty() {
 		if (root == null)
 			return true;

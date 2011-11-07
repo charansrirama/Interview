@@ -1,4 +1,4 @@
-package th.other;
+package th.recursion;
 
 public class Fibonacci {
 

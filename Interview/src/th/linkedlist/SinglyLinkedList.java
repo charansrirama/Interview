@@ -7,6 +7,7 @@ public class SinglyLinkedList {
 
 	public SinglyLinkedList() {
 		head = new Node(null);
+	    	//head = null;
 		listCount = 0;
 	}
 
@@ -23,7 +24,7 @@ public class SinglyLinkedList {
 
 	public void add(Object data, int index) {
 		Node temp = new Node(data);
-		Node current = head;
+		Node current = head.getNext();
 		for (int i = 0; i < index && current.getNext() != null; i++) {
 			current = current.getNext();
 		}
@@ -36,8 +37,8 @@ public class SinglyLinkedList {
 		if (index <= 0) {
 			return null;
 		}
-		Node current = head;
-		for (int i = 1; i < index+1; i++) {
+		Node current = head.getNext();
+		for (int i = 1; i < index; i++) {
 			if (current.getNext() == null) {
 				return null;
 			}
@@ -127,7 +128,7 @@ public class SinglyLinkedList {
 		test.add(13123123);
 		System.out.println(test.toString());
 		System.out.println(test.findNthLastNode(1).data);
-//		System.out.println(test.get(2));
+		System.out.println(test.get(2));
 		//System.out.println(test.head.getNext().data);
 		//test.reverse();
 		//System.out.println("After reverse: " + test.toString());

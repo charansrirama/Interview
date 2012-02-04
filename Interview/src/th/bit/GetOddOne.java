@@ -1,4 +1,4 @@
-package th.other;
+package th.bit;
 
 public class GetOddOne {
 

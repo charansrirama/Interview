@@ -19,6 +19,7 @@ public class NumOnesInBinary {
 	return numOnes;
     }
     
+    // Better solution.
     public int numOnesInBinary2(int number) {
 	int numOnes = 0;
 	while(number != 0) {

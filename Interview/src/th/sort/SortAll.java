@@ -111,7 +111,7 @@ public class SortAll {
 			while(input[i] < pivot) 
 				i++;
 			while(input[j] > pivot)
-				j++;
+				j--;
 			if(i <= j) {
 				temp = input[i];
 				input[i] = input[j];
@@ -120,6 +120,24 @@ public class SortAll {
 			}
 		}
 		return i;
+	}
+	
+	public static int partition2(int[] input, int left, int right) {
+	    int x = input[right];
+	    int i = left-1;
+	    for(int j = left; j < right-1; j++) {
+		if(input[j] <= x) {
+		    i++;
+		    int temp = input[i];
+		    input[i] = input[j];
+		    input[j] = temp;
+		}
+	    }
+	    int temp = input[i+1];
+	    input[i+1] = input[right];
+	    input[right] = temp;
+	    
+	    return i+1;
 	}
 	
 	public static void quickSort(int[] input, int left, int right) {

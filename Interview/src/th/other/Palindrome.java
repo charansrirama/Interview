@@ -22,7 +22,7 @@ public class Palindrome {
 				rev = rev*10 + r;
 				i = 0;
 			}
-			System.out.println("After reversing teh number is " + rev);
+			System.out.println("After reversing the number is " + rev);
 			if(n == rev) 
 				System.out.println("Number is palindrome");
 			else

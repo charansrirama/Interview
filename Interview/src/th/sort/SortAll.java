@@ -147,4 +147,9 @@ public class SortAll {
 		if(index < right)
 			quickSort(input, index, right);
 	}
+	
+	public static void main(String[] args) {
+	    int[] input = new int[] {2,3,1,6,4,5,11,33,10};
+	    bubbleSort(input);
+	}
 }

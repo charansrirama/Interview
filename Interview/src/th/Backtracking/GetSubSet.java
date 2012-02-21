@@ -46,9 +46,9 @@ public class GetSubSet {
 	    String binary = "";
 	    int temp = i;
 	    for(int j = 0; j < aaa.length; j++) {
-		int yushu = temp % 2;
+		int remider = temp % 2;
 		temp = temp/2;
-		binary = yushu + binary;
+		binary = remider + binary;
 	    }
 	    result[i] = binaryToString(aaa, binary);
 	}

@@ -50,6 +50,7 @@ public class GetSubSet {
 		temp = temp/2;
 		binary = remider + binary;
 	    }
+//	    System.out.println(binary);
 	    result[i] = binaryToString(aaa, binary);
 	}
 	return result;
@@ -90,7 +91,7 @@ public class GetSubSet {
 	String[] result = getSubSet(aaa);
 	for(int i = 0; i < result.length; i++) 
 	    System.out.println(result[i]);
-	
+	System.out.println("*****************");
 	String[] result2 = binarySubSet(aaa);
 	for(int i = 0; i < result2.length; i++)
 	    System.out.println(result2[i]);

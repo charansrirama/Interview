@@ -1,7 +1,7 @@
 package th.tree;
 
 public class PrintPath {
-	private int path[];
+	public static int path[] = new int[1000];
 	
 	public static void printPath(Node node, int[] path, int n) {
 		if(node == null) return;

@@ -21,6 +21,9 @@ public class TreeTest {
 		System.out.println();
 		MirrorTree.mirror(bst.getRoot());
 		TreePrinter.inorderPrint(bst.getRoot());
+		System.out.println();
+		
+		PrintPath.printPath(bst.getRoot(), PrintPath.path, 0);
 	}
 
 }

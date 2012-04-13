@@ -55,8 +55,8 @@ public class Permutation {
 	
 	public static boolean isOk(int[] list, int low, int high) {
 		if(low < high) {
-			for(int i = low; i <= high; i++) {
-				if(list[low] == list[high]) {
+			for(int i = low; i < high; i++) {
+				if(list[i] == list[high]) {
 					return false;
 				}
 			}

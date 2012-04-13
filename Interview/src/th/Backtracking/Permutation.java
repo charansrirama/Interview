@@ -53,16 +53,42 @@ public class Permutation {
 		th.util.Printer.arrayPrinter(list);
 	}
 	
+	public static boolean isOk(int[] list, int low, int high) {
+		if(low < high) {
+			for(int i = low; i <= high; i++) {
+				if(list[low] == list[high]) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	public static void permWithDuplicate(int[] list, int low, int high) {
+		if(low > high) {
+			th.util.Printer.arrayPrinter(list);
+		} else {
+			for(int i = low; i <= high; i++) {
+				if(isOk(list, low, i)){
+					swap(list, low, i);
+					permWithDuplicate(list, low+1, high);
+					swap(list, low, i);
+				}
+			}
+		}
+	}
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		char[] list = new char[]{'1', '2', '3'};
-		perm(list, 0, 2);
+//		char[] list = new char[]{'1', '2', '3'};
+//		perm(list, 0, 2);
+//		
+//		int[] list2 = new int[]{1,2,3};
+//		getNextPerm(list2);
 		
-		int[] list2 = new int[]{1,2,3};
-		getNextPerm(list2);
+		int[] list3 = new int[]{1,1,2,3};
+		permWithDuplicate(list3, 0, 3);
 	}
 
 }

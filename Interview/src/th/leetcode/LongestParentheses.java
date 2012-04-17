@@ -5,7 +5,7 @@ public class LongestParentheses {
 		int count = 0;
 		int maxLength = 0;
 		int runningLength = 0;
-		
+
 		for(int i = 0; i < s.length(); i++) {
 			if(s.charAt(i) == '('){
 				count++;
@@ -47,7 +47,8 @@ public class LongestParentheses {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(LongestParentheses.longestValidParentheses("(()"));
+		// This test case is the reason why we need to run from end to start one more time.
+		System.out.println(LongestParentheses.longestValidParentheses("(()")); 
 	}
 
 }

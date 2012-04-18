@@ -73,6 +73,6 @@ public class Sort {
 	}
 	
 	public static void mergesort(int[] data) {
-		mergesort(data, 0, data.length-1);
+		mergesort(data, 0, data.length);
 	}
 }

@@ -87,8 +87,8 @@ public class Permutation {
 //		int[] list2 = new int[]{1,2,3};
 //		getNextPerm(list2);
 		
-		int[] list3 = new int[]{1,1,2,3};
-		permWithDuplicate(list3, 0, 3);
+		int[] list3 = new int[]{1,2};
+		permWithDuplicate(list3, 0, 1);
 	}
 
 }

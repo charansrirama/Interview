@@ -3,27 +3,26 @@ package th.String;
 public class StringAndInt {
 
 	public static int atoi(String para) {
-		if (para == null || para.trim().length() == 0)
+		if (para == null || para.trim().length() == 0 || para.equals("0"))
 			return 0;
 		final char PLUS = '+';
 		final char MINUS = '-';
-
+		boolean negativeSign = false;
+		
 		int ret = 0;
 		String str = para.trim();
+		if(str.charAt(0) == MINUS) {
+			negativeSign = true;
+			str = str.substring(1);
+		} else if(str.charAt(0) == PLUS){
+			negativeSign = false;
+			str = str.substring(1);
+		}
 		int len = str.length();
-		boolean negativeSign = false;
-
+		
+		
 		for (int i = 0; i < len; i++) {
 			char ch = str.charAt(i);
-			if (i == 0) {
-				if (ch == PLUS) {
-					negativeSign = false;
-					continue;
-				} else if (ch == MINUS) {
-					negativeSign = true;
-					continue;
-				}
-			}
 
 			if (!(ch >= '0' && ch <= '9')) {
 				break;

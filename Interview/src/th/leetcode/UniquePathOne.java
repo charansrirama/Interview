@@ -47,11 +47,30 @@ public class UniquePathOne {
 		move[i] = move[j];
 		move[j] = temp;
 	}
+	
+	//DP method
+	public static int uniquePaths2(int m, int n) {
+		int[][] matrix = new int[m][n];
+		for(int i = 0; i < matrix.length; i++) {
+			matrix[i][matrix[0].length-1] = 1;
+		}
+		
+		for(int i = 0; i < matrix[0].length; i++) {
+			matrix[matrix.length-1][i] = 1;
+		}
+		
+		for(int i = m-2; i>=0; i--) {
+			for(int j = n-2; j >=0; j--) {
+				matrix[i][j] = matrix[i+1][j] + matrix[i][j+1];
+			}
+		}
+		return matrix[0][0];
+	}
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(uniquePaths(2,2));
+		System.out.println(uniquePaths2(2,2));
 	}
 
 }

@@ -25,6 +25,7 @@ public class RemoveDuplicate {
             A[i] = A[j];
             i++; j++;
         }
+        System.out.println(j + " " + (A.length-1));
         if(A[length-1] != A[length-2]) {
         	A[i] = A[length-1];
         	i++;
@@ -36,7 +37,7 @@ public class RemoveDuplicate {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(removeDuplicates(new int[]{1}));
+		System.out.println(removeDuplicates(new int[]{1,1,2}));
 	}
 
 }

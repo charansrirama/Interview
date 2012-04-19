@@ -44,7 +44,7 @@ public class StrStr {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(strStr("mississippi", "issipi"));
+		System.out.println(strStr("mississippi", "issi"));
 	}
 
 }

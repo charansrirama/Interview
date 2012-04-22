@@ -27,7 +27,7 @@ public class Sqrt {
 
 	public static double sqrt(double val) {
 		if(val < 0) {
-			return -1;
+			throw new ArithmeticException();
 		}
 		if(val == 0 || val == 1) return val;
 		else {
@@ -43,7 +43,7 @@ public class Sqrt {
 			while(true) {
 				double mid = (low + high)/2;
 				double tmp = mid*mid;
-				if(Math.abs(tmp-val) < eps) {
+				if(tmp == val || high-low <= eps) {
 					return mid;
 				}
 				if(tmp > val) 

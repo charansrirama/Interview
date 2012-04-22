@@ -42,9 +42,9 @@ public class SumOfSub {
      * @param args
      */
     public static void main(String[] args) {
-	int w[] = new int[] {11,7, 13,24};
+	int w[] = new int[] {2,3,6,7};
 	// (Input array, target, size of array)
-	SumOfSub test = new SumOfSub(w,31,4); 
+	SumOfSub test = new SumOfSub(w,7,4); 
 	int r = 0;
 	for(int i = 0; i < 4; i++)
 	    r += w[i];

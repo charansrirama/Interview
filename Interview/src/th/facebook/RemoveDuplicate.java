@@ -18,15 +18,35 @@ public class RemoveDuplicate {
 		}
 		return new String(temp, 0, mark);
 	}
+	// Remove duplicate at most appear twice
+	public static String removeDuplicateAtMost2(String s) {
+		char temp[] = s.toCharArray();
+		int flag[] = new int[26];
+		int mark = 0;
+		for(int i = 0; i < temp.length; i++) {
+			int index = temp[i]-'a';
+			if(flag[index] <= 1) {
+				flag[index]++;
+				char tmp = temp[i];
+				temp[i] = temp[mark];
+				temp[mark] = tmp;
+				mark++;
+			}
+		}
+		return new String(temp, 0, mark);
+	}
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(removeDuplicate("aab"));
-		System.out.println(removeDuplicate(""));
-		System.out.println(removeDuplicate("aaa"));
-		System.out.println(removeDuplicate("abcdabcd"));
-		System.out.println(removeDuplicate("abcdade"));
+//		System.out.println(removeDuplicate("aab"));
+//		System.out.println(removeDuplicate(""));
+//		System.out.println(removeDuplicate("aaa"));
+//		System.out.println(removeDuplicate("abcdabcd"));
+//		System.out.println(removeDuplicate("abcdade"));
+		
+		System.out.println(removeDuplicateAtMost2("aaba"));
+		
 	}
 
 }

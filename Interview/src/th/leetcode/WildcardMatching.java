@@ -2,7 +2,7 @@ package th.leetcode;
 
 public class WildcardMatching {
 
-	public static boolean isMatch(String s, String p) {
+	public static boolean isMatch1(String s, String p) {
 		// Start typing your Java solution below
 		// DO NOT write main() function
 		s += "\0";
@@ -19,16 +19,13 @@ public class WildcardMatching {
 			states = new boolean[pLen + 1];
 			for (int j = 0; j < pLen; j++) {
 				char pc = p.charAt(j);
-				if (old[j] && (pc == '*'))
+				if (old[j] && (pc == '*')){
 					old[j + 1] = true;
-				if (old[j] && (pc == c))
-					states[j + 1] = true;
-				if (old[j] && (pc == '?'))
-					states[j + 1] = true;
-				if (old[j] && (pc == '*'))
 					states[j] = true;
-				if (old[j] && (pc == '*'))
 					states[j + 1] = true;
+				}
+				if (old[j] && (pc == c) || (pc == '?'))
+					states[j + 1] = true;	
 			}
 			old = states;
 		}
@@ -36,6 +33,28 @@ public class WildcardMatching {
 		return states[pLen];
 	}
 
+	// Recursion version of wildcard matching
+	// Watch out: ** is legal
+	public static boolean isMatch(char[] s, char[] p, int curIndex, int regIndex) {
+		if(p.length == regIndex) return s.length == curIndex;
+		
+		if(s.length == curIndex) {
+			while(regIndex+1 <= p.length && p[regIndex] == '*')
+				regIndex += 1;
+			return regIndex == p.length;
+		}
+		
+		if(p[regIndex] == '?') {
+			return isMatch(s, p, curIndex+1, regIndex+1);
+		} else if(p[regIndex] == '*') {
+			return isMatch(s, p, curIndex+1, regIndex) ||
+					isMatch(s, p, curIndex+1, regIndex+1) ||
+					isMatch(s, p, curIndex, regIndex+1);
+		} else {
+			return s[curIndex] == p[regIndex] && isMatch(s, p, curIndex+1, regIndex+1);
+		}
+	}
+	
 	public static boolean regexMatch(char[] src, char[] regex, int currIndex, int regexIndex) {
 		if (regexIndex == regex.length) {
 			return (currIndex == src.length);
@@ -97,7 +116,10 @@ public class WildcardMatching {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(isMatch("aba", "a*a"));
+		char[] a = new char[]{'a','a','b'};
+		char[] b = new char[]{'a','a','b'};
+		System.out.println(regexMatch(a, b, 0, 0));
+		System.out.println(isMatch1("aba", "a*a"));
 	}
 
 }

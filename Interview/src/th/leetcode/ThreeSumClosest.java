@@ -30,7 +30,7 @@ public class ThreeSumClosest {
 						.abs(runningClosest - target) ? runningClosest : subsum;
 				if (subsum < target) {
 					start++;
-				} else if (sum > target) {
+				} else if (subsum > target) {
 					end--;
 				} else {
 					return target;

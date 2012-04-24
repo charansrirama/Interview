@@ -6,7 +6,6 @@ public class LongestPalidromeSubstring {
 		while(l >= 0 && r <= s.length()-1 && s.charAt(l) == s.charAt(r)) {
 			l--; r++;
 		}
-		
 		return s.substring(l+1, r);
 	}
 	

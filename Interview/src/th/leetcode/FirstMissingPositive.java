@@ -10,7 +10,7 @@ public class FirstMissingPositive {
 			if (A[i] > max)
 				max = A[i];
 		}
-		int[] flag = new int[max + 2];
+		int[] flag = new int[max + 1];
 		int result = 0;
 		for (int i = 0; i < A.length; i++) {
 			if (A[i] > 0)

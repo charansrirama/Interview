@@ -7,7 +7,7 @@ public class CombinationSum {
 	public static void combinationSum(int[] candidates, int target) {
         // Start typing your Java solution below
         // DO NOT write main() function
-        int[] index = new int[10000];
+        int[] index = new int[candidates.length+1];
         index[0] = 0;
         solve(target, 0, candidates, candidates.length, index, 0);
     }

@@ -5,8 +5,8 @@ public class EditDistance {
 	public static int minDistance(String word1, String word2) {
         // Start typing your Java solution below
         // DO NOT write main() function
-        if(word1 == null) return word2.length();
-        if(word2 == null) return word1.length();
+//        if(word1 == null) return word2.length();
+//        if(word2 == null) return word1.length();
         
         int l1 = word1.length()+1;
         int l2 = word2.length()+1;
@@ -35,7 +35,7 @@ public class EditDistance {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(minDistance("hello", "vevvo"));
+		System.out.println(minDistance("", "vevvo"));
 	}
 
 }

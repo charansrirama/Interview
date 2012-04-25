@@ -43,7 +43,7 @@ public class LCS {
 	public static void printMatrix(String path[][]) {
 		for (int i = 0; i < path.length; i++) {
 			for (int j = 0; j < path[i].length; j++) {
-				System.out.print(path[i][j] + "\t");
+				System.out.print(path[i][j] + " ");
 			}
 			System.out.println();
 		}

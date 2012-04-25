@@ -3,28 +3,39 @@ package th.leetcode;
 public class CountAndSay {
 
 	public static String countAndSay(int n) {
-		int[] flag = new int[10];
-		int temp = 0;
-		while(n > 0) {
-			temp = n%10;
-			n = n/10;
-			flag[temp]++;
+		String num = "1";
+		for(int i = 0; i < n; i++) {
+			System.out.println(num);
+			num = countAndSay(num);
 		}
-		StringBuilder sb = new StringBuilder();
-		for(int i = 0; i < flag.length; i++) {
-			if(flag[i] > 0) {
-				sb.append(flag[i]);
-				sb.append(i);
+		
+		return num;
+    }
+	
+	public static String countAndSay(String num) {
+		StringBuilder result = new StringBuilder();
+		char repeat = num.charAt(0);
+		num = num.substring(1)+" ";
+		int times = 1;
+		
+		for(char n : num.toCharArray()) {
+			if(n == repeat) {
+				times++;
+			} else {
+				result.append(times);
+				result.append(repeat);
+				times = 1;
+				repeat = n;
 			}
 		}
-		return sb.toString();
-    }
+		return result.toString();
+	}
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(countAndSay(12333));
+		countAndSay(10);
 	}
 
 }

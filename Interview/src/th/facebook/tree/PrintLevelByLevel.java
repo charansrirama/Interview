@@ -22,7 +22,32 @@ public class PrintLevelByLevel {
 			}
 			System.out.println();
 		}
-			
+	}
+	
+	public static void printLevelByLevelZ(Node root) {
+		if(root == null) {
+			return;
+		}
+		Stack<Node> current = new Stack<Node>();
+		Stack<Node> next    = new Stack<Node>();
+		boolean leftToRight = true;
+		current.add(root);
+		while(!current.isEmpty()) {
+			Node tmp = current.pop();
+			if(tmp!=null) {
+				if(leftToRight) {
+					if(tmp.leftChild != null) next.add(tmp.leftChild);
+					if(tmp.rightChild != null) next.add(tmp.rightChild);
+				} else {
+					if(tmp.rightChild!= null) next.add(tmp.rightChild);
+					if(tmp.leftChild != null) next.add(tmp.leftChild);
+				}
+			}
+			if(current.isEmpty()) {
+				current = next;
+				leftToRight = true;
+			}
+		}
 	}
 	/**
 	 * @param args

@@ -5,13 +5,6 @@ public class RemoveElement {
 		// Start typing your Java solution below
 		// DO NOT write main() function
 
-		if (A.length == 0)
-    		return 0;
-		if (A.length == 1) {
-			if(A[0] == elem) return 0;
-			else return 1;
-		}
-
 		int j = A.length - 1;
 		while (j >= 0 && A[j] == elem) {
 			j--;

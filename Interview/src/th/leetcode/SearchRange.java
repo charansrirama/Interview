@@ -45,7 +45,7 @@ public class SearchRange {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int[] data = new int[]{1};
+		int[] data = new int[]{1,1,1};
 		int[] range = searchRange(data, 1);
 		for(int i : range) {
 			System.out.print(i + " ");

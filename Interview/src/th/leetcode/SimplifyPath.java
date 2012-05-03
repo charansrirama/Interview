@@ -35,6 +35,7 @@ public class SimplifyPath {
 				stack.push(t);
 			}
 		}
+		if(stack.isEmpty()) return "/";
 		while(!stack.isEmpty()) {
 			result.insert(0, stack.pop());
 		}

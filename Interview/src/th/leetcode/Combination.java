@@ -51,11 +51,31 @@ public class Combination {
 		System.out.println();
 	}
 	
+	// Recursive method
+	private static void helper(int n, int k, int index, ArrayList<Integer> list) {
+		if(list.size() == k) {
+			for(int i : list) System.out.print(i + " ");
+			System.out.println();
+			return;
+		}
+		for(int i = index; i <= n; i++) {
+			list.add(i);
+			helper(n, k, i+1, list);
+			list.remove(list.size()-1);
+		}
+	}
+	
+	public static void combination(int n, int k) {
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		helper(n, k, 1, list);
+	}
+	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		combine(4, 2);
+//		combine(4, 2);
+		combination(4,2);
 	}
 
 }

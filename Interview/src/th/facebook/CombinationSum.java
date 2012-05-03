@@ -23,6 +23,7 @@ public class CombinationSum {
 				result.add(candidates[index[i]]);
 			}
 			results.add(result);
+			return;
 		}
 		
 		for(int i = index[n]; i < size; i++) {

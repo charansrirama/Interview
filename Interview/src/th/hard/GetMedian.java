@@ -16,7 +16,7 @@ public class GetMedian {
 		if(minHeap.size() == maxHeap.size()) {
 			if((minHeap.peek()!=null) && (randomNumber > minHeap.peek())) {
 				maxHeap.offer(minHeap.poll());
-				maxHeap.offer(randomNumber);
+				minHeap.offer(randomNumber);
 			} else {
 				maxHeap.offer(randomNumber);
 			}

@@ -17,7 +17,8 @@ public class SlidingWindowMax {
 		ArrayDeque<Integer> q = new ArrayDeque<Integer>();
 		
 		for(int i = 0; i < w; i++) {
-			while(!q.isEmpty() && array[q.peekLast()] <= array[i]) q.removeLast();
+			while(!q.isEmpty() && array[q.peekLast()] <= array[i]) 
+				q.removeLast();
 			q.addLast(i);
 		}
 		

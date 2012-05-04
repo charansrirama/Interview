@@ -14,7 +14,8 @@ public class PrintLevelByLevel {
 		q.add(root);
 		
 		while(!q.isEmpty()) {
-			for(int i = 0; i < q.size(); i++) {
+			int size = q.size();
+			for(int i = 0; i < size; i++) {
 				Node t = q.poll();
 				if(t.leftChild != null) q.add(t.leftChild);
 				if(t.rightChild != null) q.add(t.rightChild);

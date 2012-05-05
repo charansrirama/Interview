@@ -34,7 +34,7 @@ public class FindSequenceSum {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int a[] = new int[]{2,3,-8,-1,2,4,-2,3,-9};
+		int a[] = new int[]{-5,5,5,-5,5,5,-10};
 		int result[] = findSequenceSum(a);
 		th.util.Printer.arrayPrinter(a);
 		for(int i = result[0]; i <= result[1]; i++) {

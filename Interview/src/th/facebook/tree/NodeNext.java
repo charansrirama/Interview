@@ -11,12 +11,13 @@ public class NodeNext {
 	}
 	
 	public static Node getNext(Node n) {
-		if(n.rightChild != null) {
+		if(n == null) return null;
+		if(n.parent == null || n.rightChild != null) {
 			return getMin(n.rightChild);
 		}
 		
 		Node p = n.parent;
-		while(p != null && n == p.rightChild) {
+		while(p != null && n == p.leftChild) {
 			n = p;
 			p = p.parent;
 		}

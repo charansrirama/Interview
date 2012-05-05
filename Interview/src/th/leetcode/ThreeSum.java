@@ -74,6 +74,27 @@ public class ThreeSum {
 		quickSort(input, left, right);
 	}
 	
+	public static int[] threeNumZeroSum(int[] list) {
+	    int[] result = null;
+	    Set<Integer> set = new HashSet<Integer>();
+	    for(int i = 0; i < list.length; i++) {
+	        set.add(list[i]);
+	    }
+	    for(int i = 0; i < list.length; i++) {
+	        for(int j = i+1; j < list.length; i++) {
+	            int lookFor = -(list[i] + list[j]);
+	            if(set.contains(lookFor)) {
+	                result = new int[3];
+	                result[0] = list[i];
+	                result[1] = list[j];
+	                result[2] = lookFor;
+	                break;
+	            }
+	        }
+	    }
+	    return result;
+	}
+	
 	/**
 	 * @param args
 	 */

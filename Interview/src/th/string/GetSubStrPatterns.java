@@ -1,4 +1,4 @@
-package th.String;
+package th.string;
 
 import java.util.HashSet;
 import java.util.Iterator;

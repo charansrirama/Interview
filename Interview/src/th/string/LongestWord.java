@@ -1,4 +1,4 @@
-package th.String;
+package th.string;
 /**
  * shijinliang
  * Feb 6, 2012

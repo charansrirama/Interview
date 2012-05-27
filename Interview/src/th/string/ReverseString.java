@@ -1,4 +1,4 @@
-package th.String;
+package th.string;
 
 import javax.swing.JOptionPane;  
 

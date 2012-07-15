@@ -31,7 +31,7 @@ public class PrintLevelByLevel {
 		}
 		Stack<Node> current = new Stack<Node>();
 		Stack<Node> next    = new Stack<Node>();
-		boolean leftToRight = true;
+		boolean leftToRight = false;
 		current.add(root);
 		while(!current.isEmpty()) {
 			Node tmp = current.pop();
@@ -46,7 +46,7 @@ public class PrintLevelByLevel {
 			}
 			if(current.isEmpty()) {
 				current = next;
-				leftToRight = true;
+				leftToRight = !leftToRight;
 			}
 		}
 	}

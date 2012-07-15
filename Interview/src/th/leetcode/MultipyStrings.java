@@ -47,7 +47,7 @@ public class MultipyStrings {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(multipy("456", "123"));
+		System.out.println(multipy("40", "30"));
 	}
 
 }

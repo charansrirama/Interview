@@ -34,7 +34,7 @@ public class LetterCombinations {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String phone = "7";
+		String phone = "789";
 		ArrayList<String> re = letterCombinations(phone);
 		for(String s : re) {
 			System.out.println(s);

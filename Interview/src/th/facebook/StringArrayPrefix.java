@@ -9,7 +9,7 @@ public class StringArrayPrefix {
 		int lower, higher;
 		int start = 0, end = array.length-1;
 		// find lower bound
-		int mid = (start+end)/2;
+		int mid = 0;
 		while(start < end) {
 			mid = (start + end)/2;
 			int re = compare(array[mid], prefix);
@@ -46,7 +46,8 @@ public class StringArrayPrefix {
 	}
 	
 	private static int compare(String a, String prefix) {
-		int len = a.length() < prefix.length() ? a.length() : prefix.length();
+		if(prefix.length() > a.length()) return -1;
+		int len = prefix.length();
 		for(int i = 0; i < len; i++) {
 			if(a.charAt(i) > prefix.charAt(i)) return 1;
 			else if(a.charAt(i) < prefix.charAt(i)) return -1;

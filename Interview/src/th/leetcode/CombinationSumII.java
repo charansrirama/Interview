@@ -29,8 +29,8 @@ public class CombinationSumII {
 	}
 
 	public static void main(String args[]) {
-		Integer[] numbers = { 3, 9, 8, 4, 5, 7, 10 };
-		int target = 15;
+		Integer[] numbers = {1,1,2,5,6,7,10};
+		int target = 8;
 		sum_up(new ArrayList<Integer>(Arrays.asList(numbers)), target);
 	}
 

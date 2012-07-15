@@ -27,4 +27,21 @@ public class MaxSubArray {
 		}
 		return maxSum;
 	}
+	
+	// This is better, more clear
+	public int maxSubArray2(int[] A) {
+		int max = Integer.MIN_VALUE;
+		int running = 0;
+		
+		for(int i = 0; i < A.length; i++) {
+			running += A[i];
+			if(running > max) {
+				max = running;
+			}
+			if(running < 0) {
+				running = 0;
+			}
+		}
+		return max;
+	}
 }

@@ -39,7 +39,7 @@ public class WildcardMatching {
 		if(p.length == regIndex) return s.length == curIndex;
 		
 		if(s.length == curIndex) {
-			while(regIndex+1 < p.length && p[regIndex] == '*')
+			while(regIndex < p.length && p[regIndex] == '*')
 				regIndex += 1;
 			return regIndex == p.length;
 		}

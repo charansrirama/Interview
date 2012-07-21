@@ -1,4 +1,4 @@
-package th.tree;
+package th.tree2;
 
 public class MirrorTree {
 

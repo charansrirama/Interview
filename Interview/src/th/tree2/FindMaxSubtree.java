@@ -1,4 +1,4 @@
-package th.tree;
+package th.tree2;
 
 public class FindMaxSubtree {
 	public static int maxSum = Integer.MIN_VALUE;

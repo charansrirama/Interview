@@ -16,7 +16,7 @@ public class GetNext {
 		}
 		
 		Node p = n.parent;
-		while(p != null && n == p.left) {
+		while(p != null && n != p.left) {
 			n = p;
 			p = p.parent;
 		}

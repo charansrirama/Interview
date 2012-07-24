@@ -1,23 +1,21 @@
 package th.leetcode;
 
+import th.c.LinkedListProblem.Node;
+
 public class RotateList {
 
 	public static ListNode rotateList(ListNode head, int n) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
-        ListNode tail = head;
-        ListNode newHead = null;
-        for(int i = 0; i < n; i++) {
-        	tail = tail.next;
-        }
-       newHead = tail.next;
-       tail.next = null;
-       ListNode running = newHead;
-       while(running.next != null) {
-    	   running = running.next;
-       }
-       running.next = head;
-       return newHead;
+		ListNode first = head, tail = head;
+		for(int i = 0; i < n; i++) 
+			first = first.next;
+		while(first.next != null) {
+			first = first.next;
+			tail = tail.next;
+		}
+		ListNode newHead = tail.next;
+		tail.next = null;
+		first.next = head;
+		return newHead;
     }
 	
 	

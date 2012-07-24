@@ -3,8 +3,6 @@ package th.leetcode;
 public class SetZeros {
 
 	public void setZeroes(int[][] matrix) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
         int row = matrix.length;
         int col = matrix[0].length;
         boolean firstRow = false;

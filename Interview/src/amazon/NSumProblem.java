@@ -95,6 +95,42 @@ public class NSumProblem {
 		return results;
 	}
 	
+	// Contains duplicate
+	public static ArrayList<ArrayList<Integer>> fourSumH(int[] num, int target) {
+		ArrayList<ArrayList<Integer>> results = new ArrayList<ArrayList<Integer>>();
+		Hashtable<Integer, ArrayList<Integer>> table = new Hashtable<Integer, ArrayList<Integer>>();
+		HashSet set = new HashSet();
+		for(int i = 0; i < num.length; i++) {
+			for(int j = 0; j < num.length; j++) {
+				if(i!=j && i<j) {
+					ArrayList<Integer> list = new ArrayList<Integer>();
+					list.add(num[i]); list.add(num[j]);
+					int wanted = target - num[i] - num[j];
+					table.put(wanted, list);
+				}
+			}
+		}
+		for(int i = 0; i < num.length; i++) {
+			for(int j = 0; j < num.length; j++) {
+				if(i!=j && i<j) {
+					if(table.containsKey(num[i] + num[j])) {
+						ArrayList<Integer> tmp = table.get(num[i]+num[j]);
+						ArrayList<Integer> result = new ArrayList<Integer>();
+						result.add(num[i]); result.add(num[j]);
+						for(Integer t : tmp){
+							result.add(t);
+						}
+						Collections.sort(result);
+						set.add(result);
+					}
+				}
+			}
+		}
+		Iterator it = set.iterator();
+		while(it.hasNext()) 
+			results.add((ArrayList<Integer>)it.next());
+		return results;
+	}
 	
 	// AC
 	public int threeSumClosest(int[] num, int target) {
@@ -162,8 +198,14 @@ public class NSumProblem {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int num[] = new int[]{-3,-2,-5,3,-4};
-		threeSumClosest2(num, -1);
+		int num[] = new int[]{-3,-2,-1,1,2,3};
+		ArrayList<ArrayList<Integer>> results = fourSumH(num, 0);
+		for(ArrayList<Integer> result : results) {
+			for(Integer i: result) {
+				System.out.print(i + " ");
+			}
+			System.out.println();
+		}
 	}
 
 }

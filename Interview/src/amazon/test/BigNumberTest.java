@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import amazon.BigNumber;
 
-
 public class BigNumberTest {
 
 	@Test

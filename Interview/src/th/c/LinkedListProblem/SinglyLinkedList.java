@@ -92,6 +92,21 @@ public class SinglyLinkedList {
 		head = prev;
 	}
 	
+	public Node reverse2(Node head) {
+		if(head == null || head.next == null) return head;
+		
+		Node remaining = reverse2(head.next);
+		
+		Node curr = remaining;
+		while(curr.next != null) {
+			curr = curr.next;
+		}
+		
+		curr.next = head;
+		head.next = null;
+		return remaining;
+	}
+	
 	public Node findNthLastNode(Node head, int n) {
 		Node first = head, second = head;
 		for(int i = 0; i < n; i++) {
@@ -113,7 +128,7 @@ public class SinglyLinkedList {
 		Node curr = head;
 		Node next = null;
 		int count = 0;
-		while(curr!=null && count < 3) {
+		while(curr!=null && count < 2) {
 			next = curr.next;
 			curr.next = prev;
 			prev = curr;
@@ -193,7 +208,8 @@ public class SinglyLinkedList {
 		test.add(3);
 		test.add(2);
 		test.add(1);
-		test.reverse();
+		System.out.println(test.toString());
+		test.head = test.reverse2(test.head);
 //		test.head = test.reverseBetween(test.head, 1, 3);
 		System.out.println(test.toString());
 	}

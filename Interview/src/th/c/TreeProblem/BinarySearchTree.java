@@ -87,6 +87,21 @@ public class BinarySearchTree {
 		curr = root;
 	}
 	
+	// new insert method
+	public Node insert2(Node node, int num) {
+		if(node == null) {
+			node = new Node(num);
+			return node;
+		} else if(node.val > num) {
+			node.left = insert2(node.left, num);
+		} else if(node.val < num) {
+			node.right = insert2(node.right, num);
+		}
+		return node;
+	}
+	
+	public 
+	
 	// Find a node
 	Node find(Node node, int num) {
 		while(node != null && node.val != num) {

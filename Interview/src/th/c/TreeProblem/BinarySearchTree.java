@@ -87,15 +87,19 @@ public class BinarySearchTree {
 		curr = root;
 	}
 	
+	public void insert2(int num) {
+		root = add2(root, num);
+	}
+	
 	// new insert method
-	public Node insert2(Node node, int num) {
+	public Node add2(Node node, int num) {
 		if(node == null) {
 			node = new Node(num);
 			return node;
 		} else if(node.val > num) {
-			node.left = insert2(node.left, num);
+			node.left = add2(node.left, num);
 		} else if(node.val < num) {
-			node.right = insert2(node.right, num);
+			node.right = add2(node.right, num);
 		}
 		return node;
 	}

@@ -2,7 +2,6 @@ package th.pocket.gems;
 
 public class LargestPalidrome {
 	
-	// brute force way
 	public static boolean isPalidrome(int n) {
 		int high = 1;
 		while(n/high > 10) {
@@ -18,7 +17,7 @@ public class LargestPalidrome {
 		}
 		return true;
 	}
-	
+	// brute force way
 	public static int findLargestPalidrome() {
 		int max = 0;
 		for(int i = 999; i >= 100; i--) {

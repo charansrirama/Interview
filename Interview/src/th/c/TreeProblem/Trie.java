@@ -19,7 +19,7 @@ public class Trie {
 			if(child != null) {
 				curr = child;
 			} else {
-				curr.child.add(new TrieNode(s.charAt(i)));
+				curr.children.add(new TrieNode(s.charAt(i)));
 				curr = curr.subNode(s.charAt(i));
 			}
 			if(i == s.length()-1)
@@ -55,17 +55,17 @@ public class Trie {
 class TrieNode {
 	char content;
 	boolean marker;
-	Collection<TrieNode> child;
+	Collection<TrieNode> children;
 	
 	public TrieNode(char c) {
-		child = new LinkedList<TrieNode>();
+		children = new LinkedList<TrieNode>();
 		marker = false;
 		content = c;
 	}
 	
 	public TrieNode subNode(char c) {
-		if(child != null) {
-			for(TrieNode eachChild : child) {
+		if(children != null) {
+			for(TrieNode eachChild : children) {
 				if(eachChild.content == c) {
 					return eachChild;
 				}

@@ -3,13 +3,13 @@ package th.pocket.gems;
 public class RemoveCharacter {
 
 	public static String removeCharacter(String original, String remove) {
-		int[] flag = new int[52];
+		int[] flag = new int['z' - 'A'];
 		StringBuilder result = new StringBuilder();
 		for(int i = 0; i < remove.length(); i++) {
-			flag[remove.charAt(i) - 'a']++;
+			flag[remove.charAt(i) - 'A']++;
 		}
 		for(int i = 0; i < original.length(); i++) {
-			if(flag[original.charAt(i) - 'a'] == 0) {
+			if(flag[original.charAt(i) - 'A'] == 0) {
 				result.append(original.charAt(i));
 			}
 		}

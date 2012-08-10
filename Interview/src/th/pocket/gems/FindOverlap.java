@@ -22,7 +22,8 @@ public class FindOverlap {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(findOverlap("abcda", "aba"));
+		System.out.println("Case 1:" + findOverlap("abcda", "aba"));
+		System.out.println("Case 2:" + findOverlap("", "aaaa"));
 	}
 
 }

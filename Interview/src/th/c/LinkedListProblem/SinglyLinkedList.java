@@ -177,22 +177,35 @@ public class SinglyLinkedList {
 	// reverseBetween(head, 1, 3)
 	// 1->4->3->2->5
 	public Node reverseBetween(Node head, int m, int n) {
+		if(head == null) return null;
+		Node before = null;
 		Node start = head;
-		for(int i = 0; i < m-1; i++) 
+		
+		for(int i = 0; i < m; i++) {
+			if(start == null) return null;
+			before = start;
 			start = start.next;
-		Node curr = start.next;
+		}
+		
+		Node curr = start;
 		Node prev = null;
-		Node next = curr.next;
+		Node next = null;
 		int count = 0;
 		while(count <= (n-m)) {
+			next = curr.next;
 			curr.next = prev;
 			prev = curr;
 			curr = next;
-			next = next.next;
 			count++;
 		}
-		start.next.next = curr;
-		start.next = prev;
+		
+		if(m == 0) {
+			start.next = curr;
+			return prev;
+		}
+		before.next.next = curr;
+		before.next = prev;
+		
 		return head;
 	}
 	
@@ -209,8 +222,8 @@ public class SinglyLinkedList {
 		test.add(2);
 		test.add(1);
 		System.out.println(test.toString());
-		test.head = test.reverse2(test.head);
-//		test.head = test.reverseBetween(test.head, 1, 3);
+//		test.head = test.reverse2(test.head);
+		test.head = test.reverseBetween(test.head, 1, 3);
 		System.out.println(test.toString());
 	}
 }

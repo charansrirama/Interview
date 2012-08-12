@@ -18,6 +18,12 @@ public class Node {
 		left = null; right = null;
 	}
 	
+	Node(int data, Node left, Node right) {
+		val = data;
+		this.left = left;
+		this.right = right;
+	}
+	
 	public String toString() {
 		if(left == null && right == null) {
 			return "(" + val + ")";

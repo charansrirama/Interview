@@ -17,4 +17,12 @@ public class Node {
 		parent = null;
 		left = null; right = null;
 	}
+	
+	public String toString() {
+		if(left == null && right == null) {
+			return "(" + val + ")";
+		} else {
+			return "(" + val + ", " + left + ", " + right + ")";
+		}
+	}
 }

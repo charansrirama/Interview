@@ -3,9 +3,10 @@ package th.c.LinkedListProblem;
 public class FindMiddle {
 	
 	public static int findMiddle(Node head) {
+		if(head == null) return -999;
 		Node n = head;
 		Node n2 = head;
-		while(n2 != null && n2.next != null) {
+		while(n2.next != null && n2.next.next != null) {
 			n = n.next;
 			n2 = n2.next.next;
 		}

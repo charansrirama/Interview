@@ -8,4 +8,10 @@ public class LNode {
 		this.val = v;
 		next = null;
 	}
+	
+	public String toString() {
+		if(next == null) return val +"";
+		else 
+			return val + " " + next;
+	}
 }

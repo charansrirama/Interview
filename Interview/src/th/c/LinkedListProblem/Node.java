@@ -13,4 +13,10 @@ public class Node {
 		this.val = val;
 		this.next = next;
 	}
+	
+	public String toString() {
+		if(next == null) return val + "";
+		else 
+			return val + " " + next;
+	}
 }

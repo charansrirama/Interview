@@ -7,7 +7,7 @@ public class ShuffleArray {
 	public static void shuffle(int[] array) {
 		int n = array.length;
 		Random random = new Random();
-		random.nextInt();
+//		random.nextInt();
 		for(int i = 0; i < n; i++) {
 			int change = i+random.nextInt(n-i);
 			swap(array, i, change);

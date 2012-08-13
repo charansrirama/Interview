@@ -32,11 +32,13 @@ public class ListIntersection {
 			int diff = lenA-lenB;
 			while(diff != 0) {
 				a = a.next;
+				diff--;
 			}
 		} else if(lenB > lenA) {
 			int diff = lenB-lenA;
 			while(diff != 0) {
 				b = b.next;
+				diff--;
 			}
 		}
 		

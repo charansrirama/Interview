@@ -36,7 +36,7 @@ public class WindowOfKZeros {
 				end++;
 			}
 			
-			if(end-start < win) {
+			if(end < len && end-start < win) {
 				win = end - start;
 			}
 			start++; end++;
@@ -49,8 +49,8 @@ public class WindowOfKZeros {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] input = new int[] {1,0,1,0,0,1,0,1,1,0,0,0};
-		System.out.println(findMinWindows(input, 2));
+		int[] input = new int[] {1,1,0,0,1,0,1,1,0,1,1,0,0,0,1};
+		System.out.println(findMinWindows(input, 4));
 	}
 
 }

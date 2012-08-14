@@ -3,7 +3,7 @@ package th.pocket.gems;
 public class FindOverlap {
 
 	public static String findOverlap(String a, String b) {
-		int[] flag = new int['z'-'A'];
+		int[] flag = new int['z'-'A'+1];
 		StringBuilder result = new StringBuilder();
 		for(int i = 0; i < a.length(); i++) {
 			flag[a.charAt(i) - 'A']++;

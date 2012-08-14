@@ -1,33 +1,26 @@
 package th.pocket.gems;
 
+import java.util.*;
+
 public class ArrayNotAppear {
 	
 	public static int[] findDiff(int[] array1, int[] array2) {
-		int[] flag = new int[10];
+		List<Integer> set = new ArrayList<Integer>();
 		for(int i = 0; i < array1.length; i++) {
-			flag[array1[i]]++;
-		}
-		for(int i = 0; i < array2.length; i++) {
-			if(flag[array2[i]] > 0) 
-				flag[array2[i]] = 0;
+			set.add(array1[i]);
 		}
 		
-		// result size
-		int size = 0;
-		for(int i = 0; i < flag.length; i++) {
-			if(flag[i] > 0) {
-				size += flag[i];
-			}
-		}
-		int[] result = new int[size];
-		int cur = 0;
-		for(int i = 0; i < flag.length;) {
-			if(flag[i] > 0) {
-				result[cur++] = i;
-				flag[i]--;
-			} else {
+		for(int i = 0; i < array2.length;) {
+			if(set.contains(array2[i]))
+				set.remove(set.indexOf(array2[i]));
+			else 
 				i++;
-			}
+		}
+		
+		int[] result = new int[set.size()];
+		int count = 0;
+		for(int i : set) {
+			result[count++] = i;
 		}
 		
 		return result;

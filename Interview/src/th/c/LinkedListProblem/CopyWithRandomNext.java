@@ -17,7 +17,7 @@ public class CopyWithRandomNext {
 		// copy the arbitrary linke for result
 		curr = head;
 		while(curr != null) {
-			curr.next.rand = curr.rand;
+			curr.next.rand = curr.rand.next;
 			curr = curr.next.next;
 		}
 		// restore original and cooy linked list

@@ -3,14 +3,15 @@ package th.pocket.gems;
 public class FindPrimeNum {
 
 	public static void findPrimeNum(int n) {
-		for(int i = 1; i <= n; i++) {
+		if(n <= 1) return; 
+		for(int i = 2; i <= n; i++) {
 			if(isPrime(i))
 				System.out.println(i);
 		}
 	}
 	
 	public static boolean isPrime(int n) {
-		for(int i = 2; i <= (int)Math.sqrt(n)+1; i++) {
+		for(int i = 2; i <= (int)Math.sqrt(n); i++) {
 			if(n%i == 0) return false;
 		}
 		return true;
@@ -22,7 +23,8 @@ public class FindPrimeNum {
 	}
 	
 	public static boolean helper(int n, int d) {
-		if(d == 1 || d == 0 || d == -1) 
+		if(n == 1 || n == 0) return false;
+		if(d == 1) 
 			return true;
 		else {
 			if(n % d == 0) 

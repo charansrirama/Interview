@@ -47,10 +47,10 @@ public class TwoSum {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] array = {1,3,4,5,7,9};
+		int[] array = {1,1,3,4,5,7,9,9};
 		int[] result = twoSum(array, 9);
 		System.out.println(result[0] + ", " + result[1]);
-		int[] result2 = twoSum2(array, 9);
+		int[] result2 = twoSum2(array, 10);
 		System.out.println(result2[0] + ", " + result2[1]);
 	}
 

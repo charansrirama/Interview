@@ -6,7 +6,7 @@ public class LCA {
 		if(node.val == a || node.val == b) return node.val;
 		int l = LCA(node.left, a, b);
 		int r = LCA(node.right, a, b);
-		if(l == -999 && r == -999) return node.val;
+		if(l != -999 && r != -999) return node.val;
 		return (l == -999) ? r : l;
 	}
 }

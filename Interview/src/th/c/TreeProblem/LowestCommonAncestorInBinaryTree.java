@@ -7,7 +7,7 @@ public class LowestCommonAncestorInBinaryTree {
 		Node l = LCAinBT(root.left, p, q);
 		Node r = LCAinBT(root.right, p, q);
 		
-		if(l==null && r==null) return root; // p and q is on both sides
+		if(l!=null && r!=null) return root; // p and q is on both sides
 		return (l == null) ? r : l;
 	}
 }

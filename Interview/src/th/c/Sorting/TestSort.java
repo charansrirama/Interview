@@ -22,7 +22,10 @@ public class TestSort {
 
 	@Parameters
 	public static Collection regExValues() {
-		return Arrays.asList(new Object[][] { { new BubbleSort() } });
+		return Arrays.asList(new Object[][] { 
+				{ new BubbleSort() } ,
+				{ new InsertionSort() }
+		});
 	}
 
 	// Null array

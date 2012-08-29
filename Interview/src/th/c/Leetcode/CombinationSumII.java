@@ -19,6 +19,7 @@ public class CombinationSumII {
 		if(sum == target) {
 			ArrayList<Integer> result = new ArrayList<Integer>(list);
 			results.add(result);
+			//System.out.println(result);
 		}
 		if(sum >= target) return;
 		for(int i = step; i < num.length; i++) {

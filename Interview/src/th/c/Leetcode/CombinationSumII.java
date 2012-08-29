@@ -19,13 +19,16 @@ public class CombinationSumII {
 		if(sum == target) {
 			ArrayList<Integer> result = new ArrayList<Integer>(list);
 			results.add(result);
-			//System.out.println(result);
+			System.out.println(result);
 		}
 		if(sum >= target) return;
 		for(int i = step; i < num.length; i++) {
 			list.add(num[i]);
 			help(num, list, target, sum+num[i], i+1, results);
 			list.remove(list.size()-1);
+			while(i+1 < num.length && num[i+1] == num[i]) {
+				i++;
+			}
 		}
 	}
 	

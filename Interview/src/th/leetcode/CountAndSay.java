@@ -36,7 +36,7 @@ public class CountAndSay {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		countAndSay(10);
+		System.out.println(countAndSay(10));
 	}
 
 }

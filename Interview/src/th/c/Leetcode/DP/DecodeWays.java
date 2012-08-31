@@ -1,7 +1,7 @@
-package th.c.Leetcode;
+package th.c.Leetcode.DP;
 
 public class DecodeWays {
-	
+	// DP
 	public static int numDecoding(String s) {
 		if(s == null || s.length() == 0) return 0;
 		int len = s.length();

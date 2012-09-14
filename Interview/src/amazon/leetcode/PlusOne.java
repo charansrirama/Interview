@@ -13,7 +13,7 @@ public class PlusOne {
 		if(up != 0) {
 			int[] plusone = new int[digits.length+1];
 			plusone[0] = up;
-			System.arraycopy(plusone, 1, result, 0, result.length);
+			//System.arraycopy(plusone, 1, result, 0, result.length);
 			result = plusone;
 		}
 		return result;

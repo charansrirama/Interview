@@ -30,9 +30,11 @@ public class RegularExpression {
 					return helper(s, p, sIndex+1, pIndex) || 
 							helper(s, p, sIndex+1, pIndex+2) ||
 							helper(s, p, sIndex, pIndex+2);
-				return helper(s, p, sIndex, pIndex+2);
+				else 
+					return helper(s, p, sIndex, pIndex+2);
 			}  else 
 				return s[sIndex] == p[pIndex] && helper(s, p, sIndex+1, pIndex+1);
 		}
 	}
+	
 }

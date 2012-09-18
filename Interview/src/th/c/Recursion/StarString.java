@@ -25,7 +25,7 @@ public class StarString {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(power(2, 4));
+		starString(5);
 	}
 
 }

@@ -1,4 +1,4 @@
-package th.c.StackProblem;
+package th.c.StackQueueProblem;
 
 import java.util.Stack;
 

@@ -1,4 +1,4 @@
-package th.c.QueueProblem;
+package th.c.StackQueueProblem;
 
 import java.util.*;
 

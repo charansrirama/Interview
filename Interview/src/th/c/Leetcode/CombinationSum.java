@@ -2,6 +2,7 @@ package th.c.Leetcode;
 
 import java.util.*;
 
+// Use multiple times
 public class CombinationSum {
 
 	public static ArrayList<ArrayList<Integer>> combinationSum(int[] candicates, int target) {

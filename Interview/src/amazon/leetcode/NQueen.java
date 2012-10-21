@@ -69,7 +69,7 @@ public class NQueen {
 	
 	public boolean getNextPerm(int[] queens) {
 		for(int i = queens.length-2; i>=0; i--) {
-			if(queens[i] < queens[i]) {
+			if(queens[i] < queens[i+1]) {
 				for(int j = queens.length-1; j > i; j--) {
 					if(queens[j] > queens[i]) {
 						swap(queens, i, j);

@@ -2,6 +2,7 @@ package th.c.Leetcode;
 
 import java.util.*;
 
+// Use once
 public class CombinationSumII {
 
 	public static ArrayList<ArrayList<Integer>> combinationSum2(int[] num, int target) {

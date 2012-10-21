@@ -5,32 +5,26 @@ import java.util.*;
 public class ReversePolishNotation {
 
 	public static int reversePolishNotation(LinkedList<String> list) {
-		int result = 0;
 		Stack<Integer> stack = new Stack<Integer>();
 		int a, b;
 		for(String s : list) {
-			switch(s) {
-			case "+":
+			if(s == "+") {
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(a+b);
-				break;
-			case "-":
+			} else if(s == "-") {
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(a-b);
-				break;
-			case "*":
+			} else if(s == "*") {
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(a*b);
-				break;
-			case "/":
+			} else if(s == "/") {
 				b = stack.pop();
 				a = stack.pop();
 				stack.push(a/b);
-				break;
-			default:
+			} else {
 				stack.push(Integer.parseInt(s));
 			}
 		}

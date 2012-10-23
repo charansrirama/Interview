@@ -1,4 +1,4 @@
-package th.c.Leetcode;
+package th.c.Leetcode.list;
 
 import java.util.*;
 

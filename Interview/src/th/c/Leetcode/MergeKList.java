@@ -30,7 +30,62 @@ public class MergeKList {
 
 		return head;
 	}
+	
+	public ListNode mergeKLists2(ArrayList<ListNode> lists) {
+		if(lists == null || lists.size() == 0) 
+			return null;
+		if(lists.size() == 1) {
+			return lists.get(0);
+		} else {
+			ListNode head = lists.get(0);
+			for(int i = 1; i < lists.size(); i++) {
+				head = merge(head, lists.get(i));
+			}
+			return head;
+		}
+	}
 
+	private ListNode merge(ListNode root0, ListNode root1) {
+		if(root0 == null) return root1;
+		if(root1 == null) return root0;
+		ListNode head = null;
+		ListNode p = null;
+		if(root0.val < root1.val) {
+			head = new ListNode(root0.val);
+			p = head;
+			root0 = root0.next;
+		} else {
+			head = new ListNode(root1.val);
+			p = head;
+			root1 = root1.next;
+		}
+		
+		while(root0 != null && root1 != null) {
+			if(root0.val < root1.val) {
+				p.next = new ListNode(root0.val);
+				root0 = root0.next;
+			} else {
+				p.next = new ListNode(root1.val);
+				root1 = root1.next;
+			} 
+			p = p.next;
+		}
+		
+		while(root0!=null) {
+			p.next = new ListNode(root0.val);
+			p = p.next;
+			root0 = root0.next;
+		}
+		
+		while(root1!=null) {
+			p.next = new ListNode(root1.val);
+			p = p.next;
+			root1 = root1.next;
+		}
+		
+		return head;
+	}
+	
 	/**
 	 * @param args
 	 */

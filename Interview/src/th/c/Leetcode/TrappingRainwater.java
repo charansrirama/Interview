@@ -7,7 +7,7 @@ public class TrappingRainwater {
 		
 		while(i < j) {
 			while(i < j && A[i] < A[i+1]) i++;
-			while(i < j && A[j-1] < A[j]) j--;
+			while(i < j && A[j] < A[j-1]) j--;
 			if(i == j) break;
 			int start, low;
 			boolean direct = true;

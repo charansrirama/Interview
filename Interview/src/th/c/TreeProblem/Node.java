@@ -5,16 +5,19 @@ public class Node {
 	Node parent;
 	Node left;
 	Node right;
+	Node silibing;
 	
 	Node() {
 		val = 0;
 		parent = null;
+		silibing = null;
 		left = null; right = null;
 	}
 	
 	Node(int data) {
 		val = data;
 		parent = null;
+		silibing = null;
 		left = null; right = null;
 	}
 	
@@ -22,6 +25,7 @@ public class Node {
 		val = data;
 		this.left = left;
 		this.right = right;
+		silibing = null;
 	}
 	
 	public String toString() {

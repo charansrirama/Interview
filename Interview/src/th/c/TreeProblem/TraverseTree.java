@@ -65,10 +65,10 @@ public class TraverseTree {
 		while(!s.isEmpty()) {
 			Node curr = s.peek();
 			if(prev == null || prev.left == curr || prev.right == curr) {
-				if(curr.left != null) {
-					s.push(curr.left);
-				} else if(curr.right != null) {
+				if(curr.right != null) {
 					s.push(curr.right);
+				} else if(curr.left != null) {
+					s.push(curr.left);
 				}
 			} else if(curr.left == prev) {
 				if(curr.right != null) 

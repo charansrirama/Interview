@@ -47,6 +47,7 @@ public class FindMaxSum {
 	
 	public static int rice_chessboard(int[][] A) {
 		if(A == null) return 0;
+		if(A.length == 0 || A[0].length == 0) return 0;
 		int m = A.length;
 		int n = A[0].length;
 		if(m == 1 && n == 1) return A[0][0];
@@ -106,9 +107,11 @@ public class FindMaxSum {
 				{1},
 				{4}
 		};
+		int[][] A4 = {{}};
 		System.out.println(rice_chessboard(A));
 		System.out.println(rice_chessboard(A2));
 		System.out.println(rice_chessboard(A3));
+		System.out.println(rice_chessboard(A4));
 	}
 
 }

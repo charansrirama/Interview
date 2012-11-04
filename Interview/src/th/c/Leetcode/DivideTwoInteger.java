@@ -57,6 +57,44 @@ public class DivideTwoInteger {
 		}
 		return sign ? -result : result;
 	}
+	
+	// AC
+	public static int divide3(int dividend, int divisor) {
+		boolean sign = false;
+		if((dividend > 0 && divisor < 0) || (dividend < 0 && divisor > 0)) 
+			sign = true;
+		int a = Math.abs(dividend);
+		int b = Math.abs(divisor);
+		
+		if(divisor == 0) 
+			return Integer.MAX_VALUE;
+		
+		if(divisor == Integer.MIN_VALUE) {
+			if(dividend == Integer.MIN_VALUE) 
+				return 1;
+			else 
+				return 0;
+		}
+		if(dividend == Integer.MIN_VALUE) {
+			if(sign) 
+				return -1 + divide3(dividend+b, b);
+			else 
+				return 1 - divide3(dividend+b, b);
+		}
+		
+		int product = b, result = 0;
+		while(a >= b) {
+			int q = 1;
+			while(a - product >= product) {
+				q <<= 1;
+				product <<= 1;
+			}
+			a -= product;
+			product = b;
+			result += q;
+		}
+		return sign ? -result : result;
+	}
 
 	public static void main(String[] args) {
 		System.out.println(divide2(6, 1));

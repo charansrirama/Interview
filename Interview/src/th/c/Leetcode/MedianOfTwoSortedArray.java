@@ -25,6 +25,19 @@ public class MedianOfTwoSortedArray {
 		return ret;
 	}
 	
+	// O(lg(m+n))
+	public int kthSmall(int[] A, int aoffset, int m, int[] B, int boffset, int n, int k) {
+		if(m > n) return kthSmall(B, boffset, n, A, aoffset, m, k);
+		if(m == 0) return B[k-1];
+		if(k == 1) return Math.min(A[aoffset], B[boffset]);
+		int pa = Math.min(k/2, m);
+		int pb = k - pa;
+		
+		if(A[aoffset + pa -1] < B[boffset + pb - 1])
+			return kthSmall(A, aoffset + pa, m - pa, B, boffset, n, k - pa);
+		return kthSmall(A, aoffset, m, B, boffset + pb, n - pb, k-pb);
+	}
+	
 	
 	/**
 	 * @param args

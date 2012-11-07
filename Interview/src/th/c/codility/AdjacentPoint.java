@@ -1,4 +1,4 @@
-package th.codility;
+package th.c.codility;
 
 import java.util.Arrays;
 

@@ -3,6 +3,36 @@ package th.c.Leetcode;
 import java.util.Arrays;
 
 public class Interleave {
+	
+	public boolean isInterleaveDP(String s1, String s2, String s3) {
+		if(s1 == null || s2 == null || s3 == null || s1.length()+s2.length() != s3.length()) 
+            return false;
+		int l1 = s1.length();
+		int l2 = s2.length();
+		if(l1 == 0 && l2 == 0 && s3.length() == 0) return true;
+		boolean[][] dp = new boolean[l1+1][l2+1];
+		for(int i = 0; i < l1; i++) {
+			if(s1.charAt(i) == s3.charAt(i)) 
+				dp[i+1][0] = true;
+			else 
+				break;
+		}
+		for(int i = 0; i < l2; i++) {
+			if(s2.charAt(i) == s3.charAt(i)) 
+				dp[0][i+1] = true;
+			else 
+				break;
+		}
+		
+		for(int i = 1; i <= l1; i++) {
+			for(int j = 1; j <= l2; j++) {
+				dp[i][j] = (dp[i-1][j] && s3.charAt(i+j-1) == s1.charAt(i-1)) 
+						|| (dp[i][j-1] && s3.charAt(i+j-1) == s2.charAt(j-1));
+			}
+		}
+		return dp[l1][l2];
+	}
+	
 	// AC
 	public boolean isInterleave(String s1, String s2, String s3) {
         if(s1 == null || s2 == null || s3 == null || s1.length()+s2.length() != s3.length()) 
@@ -57,7 +87,7 @@ public class Interleave {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }

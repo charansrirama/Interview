@@ -3,34 +3,6 @@ package th.c.Leetcode;
 import java.util.*;
 
 public class ContainerWithMostWater {
-
-	public static int largestRetangle(int[] height) {
-        int maxArea = 0;
-        Stack<Integer> heights = new Stack<Integer>();
-        Stack<Integer> indeces = new Stack<Integer>();
-        
-        for(int i = 0; i < height.length; i++) {
-        	if(heights.isEmpty() || height[i] > heights.peek()) {
-        		heights.push(height[i]);
-        		indeces.push(i);
-        	} else if(height[i] < heights.peek()){
-        		int lastIndex = 0;
-        		while(!heights.isEmpty() && height[i] < heights.peek()) {
-        			lastIndex = indeces.pop();
-        			int tmp = heights.pop()*(i-lastIndex-1);
-        			if(tmp > maxArea) maxArea = tmp;
-        		}
-        		heights.push(height[i]);
-        		indeces.push(lastIndex);
-        	}
-        }
-        
-        while(!heights.isEmpty()) {
-        	int tmp = heights.pop()*(height.length - indeces.pop()-1);
-        	if(tmp > maxArea) maxArea = tmp;
-        }
-        return maxArea;
-    }
 	
 	public static int maxArea(int[] height) {
 		if(height.length == 0 || height == null) return -1;

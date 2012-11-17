@@ -14,6 +14,7 @@ public class RestoreIPAddress {
 	// AC
 	public static ArrayList<String> restoreIpAddresses(String s) {
 		ArrayList<String> results = new ArrayList<String>();
+		if(s.length() > 12 || s.length() < 4) return results;
 		helper(s, 0, "", 1, results);
 		return results;
     }
@@ -23,7 +24,7 @@ public class RestoreIPAddress {
 			results.add(re);
 			return;
 		}
-		if(s.length() > 12 || s.length() < 4) return;
+		
 		int x = 0;
 		for(int i = step; i < s.length(); i++) {
 			x = x*10 + s.charAt(i) - '0';

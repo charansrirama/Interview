@@ -7,6 +7,31 @@ public class RemoveDuplicateFromSortedListII {
 
 	public ListNode deleteDuplicates(ListNode head) {
 		if(head == null || head.next == null) return head;
+        int prev = head.val;
+        ListNode running = head.next;
+        ListNode result = new ListNode(0);
+        ListNode re = result;
+        boolean first = true;
+        while(running != null) {
+            if(running.val != prev) {
+                if(first) {
+                    result.next = new ListNode(prev);
+                    result = result.next;
+                }
+                first = true;
+            } else {
+                first = false;
+            }
+            prev = running.val;
+            running = running.next;        
+        }
+        if(first)
+            result.next = new ListNode(prev);
+        return re.next;
+	}
+	
+	public ListNode deleteDuplicates2(ListNode head) {
+		if(head == null || head.next == null) return head;
 		ListNode p = head;
 		ListNode nh = null;
 		ListNode c = null;

@@ -3,7 +3,7 @@ package th.c.Leetcode.tree;
 import java.util.*;
 
 // AC
-public class UniqueBinarySearchTree {
+public class UniqueBinarySearchTreesII {
 	
 	public ArrayList<TreeNode> generateTrees(int n) {
 		ArrayList<TreeNode> list = new ArrayList<TreeNode>();

@@ -2,6 +2,10 @@ package th.gcd;
 
 public class Gcd {
 
+	public int gcdRe(int p, int q) {
+		if(q == 0) return p;
+		else return gcdRe(q, p%q);
+	}
 	/**
 	 * @param args
 	 */

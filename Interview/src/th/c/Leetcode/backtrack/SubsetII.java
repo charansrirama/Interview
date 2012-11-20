@@ -1,11 +1,10 @@
-package th.c.Leetcode;
+package th.c.Leetcode.backtrack;
 
 import java.util.*;
 
-public class Subset {
-
-	public ArrayList<ArrayList<Integer>> subsets(int[] S) {
-		ArrayList<ArrayList<Integer>> results = new ArrayList<ArrayList<Integer>>();
+public class SubsetII {
+	public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] S) {
+        ArrayList<ArrayList<Integer>> results = new ArrayList<ArrayList<Integer>>();
 		if(S == null || S.length == 0) return results;
 		Arrays.sort(S);
 		HashSet<ArrayList<Integer>> set = new HashSet<ArrayList<Integer>>();

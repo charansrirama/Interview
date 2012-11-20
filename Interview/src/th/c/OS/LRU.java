@@ -1,4 +1,4 @@
-package th.facebook;
+package th.c.OS;
 
 import java.util.*;
 
@@ -113,8 +113,8 @@ public class LRU {
 class CacheNode {
 	CacheNode prev;
 	CacheNode next;
-	Object value;
 	Object key;
+	Object value;
 	public CacheNode(){
 		
 	}

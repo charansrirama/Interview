@@ -5,6 +5,21 @@ import java.util.Hashtable;
 // AC 
 public class RemoveDuplicateFromSortedList {
 	
+	public static ListNode deleteDuplicates3(ListNode head) {
+        if(head == null || head.next == null) return head;
+        ListNode newHead = new ListNode(head.val);
+        ListNode curr = newHead, next = head.next;
+        while(next != null) {
+            if(curr.val != next.val) {
+                curr.next = new ListNode(next.val);
+                curr = curr.next;
+            }
+            next = next.next;
+        }
+
+        return newHead;
+    }
+	
 	public static ListNode deleteDuplicates(ListNode head) {
 		if(head == null || head.next == null) return head;
 		int prev = head.val;
@@ -42,6 +57,6 @@ public class RemoveDuplicateFromSortedList {
 	public static void main(String[] args) {
 		ListNode head = new ListNode(1);
 		head.next = new ListNode(2);
-		deleteDuplicates(head);
+		deleteDuplicates3(head);
 	}
 }

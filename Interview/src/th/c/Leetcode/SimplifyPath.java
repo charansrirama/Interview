@@ -41,7 +41,7 @@ public class SimplifyPath {
 				result += c;
 			}
 		}
-		if (result.length() == 0)
+		if (result.length() == 0 || result.charAt(0) != '/')
 			result = "/" + result;
 		return result;
 	}

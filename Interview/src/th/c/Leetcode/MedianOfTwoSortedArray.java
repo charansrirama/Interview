@@ -14,7 +14,8 @@ public class MedianOfTwoSortedArray {
 	public static int kthSmallNum(int[] A, int[] B, int k) {
 		int ia = 0, ib = 0;
 		int ret = 0;
-		while(--k >= 0 && ia < A.length && ib < B.length) {
+		k--;
+		while(k-- >= 0 && ia < A.length && ib < B.length) {
 			if(A[ia] < B[ib])
 				ret = A[ia++];
 			else 

@@ -17,7 +17,7 @@ public class MinimumWindowString {
 			while(isSatisfy(table1, table2) && tail1 < head1) {
 				if(head1-tail1 < head0-tail0 || head0 == tail0) {
 					tail0 = tail1;
-					head0 = tail0;
+					head0 = head1;
 				}
 				table1[S.charAt(tail1++)]--;
 			}

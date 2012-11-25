@@ -9,6 +9,6 @@ public class JumpGame {
 			if(k < A[i] + i)
 				k = A[i] + i;
 		}
-		return i == A.length;
+		return i >= A.length;
 	}
 }

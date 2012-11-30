@@ -1,4 +1,4 @@
-package th.pocket.gems.design;
+package th.c.Design;
 
 import java.util.*;
 
@@ -6,7 +6,7 @@ enum Status {
 	RUNNING, IDLE, MAINTANCE
 }
 
-public class Elevator implements Runnable {
+public class Elevator2 implements Runnable {
 	private int direction; // 0 : down; 1 : up
 	private static List<Integer> currRequest;
 	private static List<Integer> nextRequest;
@@ -16,7 +16,7 @@ public class Elevator implements Runnable {
 	
 	Thread t;
 
-	public Elevator(int floors) {
+	public Elevator2(int floors) {
 		direction = 1;
 		currRequest = new LinkedList<Integer>();
 		nextRequest = new LinkedList<Integer>();
@@ -132,9 +132,9 @@ public class Elevator implements Runnable {
 
 	public static void main(String[] args) {
 		System.out.println("Start...");
-		Elevator elevator = new Elevator(10);
+		Elevator2 elevator = new Elevator2(10);
 		elevator.run();
-		Elevator elevator2 = new Elevator(10);
+		Elevator2 elevator2 = new Elevator2(10);
 		for(int i = 0; i < 5; i++) {
 			elevator2.push(i);
 			try {
@@ -147,10 +147,10 @@ public class Elevator implements Runnable {
 }
 
 class Scheduler {
-	Elevator[] elevator;
+	Elevator2[] elevator;
 
 	public Scheduler(int n) {
-		elevator = new Elevator[n];
+		elevator = new Elevator2[n];
 	}
 
 	public void setMaintance(int n) {

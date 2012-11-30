@@ -55,7 +55,7 @@ public class FindUnion {
 		int[] B = {3,4,5,6,7,8};
 		int[] A1 = {1,2};
 		int[] B1 = {3,4,5,6,7,8};
-		ArrayList<Integer> re = findUnion(A, B);
+		ArrayList<Integer> re = findUnion1(A, B);
 		for(Integer i : re) System.out.println(i);
 	}
 

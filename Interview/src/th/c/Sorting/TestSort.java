@@ -24,7 +24,10 @@ public class TestSort {
 	public static Collection regExValues() {
 		return Arrays.asList(new Object[][] { 
 				{ new BubbleSort() } ,
-				{ new InsertionSort() }
+				{ new InsertionSort() },
+				{ new ShellSort() },
+				{ new MergeSort() },
+				{ new QuickSort() }
 		});
 	}
 

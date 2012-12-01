@@ -37,7 +37,7 @@ public class NumberOf1 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int n = 15;
+		int n = 10;
 		System.out.println(numOf1(n));
 	}
 }

@@ -2,6 +2,26 @@ package th.c.Leetcode;
 
 public class DivideTwoInteger {
 
+	public int divide4(int dividend, int divisor) {
+		if(divisor == 0) throw new ArithmeticException();
+		boolean neg = false;
+		long a = dividend, b = divisor;
+		if(a < 0) neg = !neg;
+		if(b < 0) neg = !neg;
+		a = Math.abs(a); b = Math.abs(b);
+		int c = 0;
+		while(b << c <= a) c++;
+		int ans = 0;
+		while(c >= 0) {
+			if(b << c <= a) {
+				a -= b<<c;
+				ans |= 1<< c;
+			}
+			c--;
+		}
+		return neg? -ans : ans;
+	}
+	
 	/*
 	 * The common way to do this is to count how many times that divisor adding
 	 * up to dividend. Of course, we should take care of signs. That’s not hard

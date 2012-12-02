@@ -2,7 +2,7 @@ package th.c.company.amzn;
 
 public class LongestIncreaseSubsequence {
 	
-	// O(n)
+	// O(n2)
 	public static int lis(int[] A) {
 		int[] dp = new int[A.length];
 		for(int i = 0; i < A.length; i++) {

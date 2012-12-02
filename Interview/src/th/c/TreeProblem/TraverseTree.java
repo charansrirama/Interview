@@ -61,6 +61,22 @@ public class TraverseTree {
 			}
 		}
 	}
+	
+	public void in2(Node node) {
+		if(node == null) return;
+		Stack<Node> s = new Stack<Node>();
+		Node curr = node;
+		while(!s.isEmpty() || curr != null) {
+			if(curr != null) {
+				s.push(curr);
+				curr = curr.left;
+			} else {
+				Node t = s.pop();
+				System.out.println(t.val);
+				curr = t.right;
+			}
+		}
+	}
 
 	public void post(Node node) {
 		if (node == null)

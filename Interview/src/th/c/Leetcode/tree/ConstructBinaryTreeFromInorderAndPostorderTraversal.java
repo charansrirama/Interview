@@ -1,6 +1,6 @@
 package th.c.Leetcode.tree;
 
-// AC CXXXXXX
+// AC
 
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 

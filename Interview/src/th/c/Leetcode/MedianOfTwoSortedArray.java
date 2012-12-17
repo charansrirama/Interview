@@ -39,15 +39,46 @@ public class MedianOfTwoSortedArray {
 		return kthSmall(A, aoffset, m, B, boffset + pb, n - pb, k-pb);
 	}
 	
+	public static double findMedianSortedArrays1(int[] A, int[] B) {
+		if((A == null || A.length == 0)&&(B == null || B.length == 0)) return 0;
+		if(A.length >= B.length) 
+			return help(B, A);
+		else 
+			return help(A, B);
+	}
+	
+	public static double help(int[] A, int[] B) {
+		int m = A.length, n = B.length;
+		
+		int k = (n+m-1)/2;
+		int l = 0, r = m;
+		while(l < r) {
+			int mid = l + (r-l)/2, bldx = k-mid;
+			if(bldx>k || A[mid]<B[bldx]) 
+				l = mid+1;
+			else 
+				r = mid;
+		}
+		
+		int a = l-1 >= 0 ? A[l-1] : Integer.MIN_VALUE;
+		int b = k-1 >= 0 ? B[k-1] : Integer.MIN_VALUE;
+		a = a >= b ? a : b;
+		if((m+n)%2 == 1) return a;
+		
+		int c = k-l+1 >= n ? Integer.MAX_VALUE : B[k-l+1];
+		int d = l >= m ? Integer.MAX_VALUE : A[l];
+		c = c <= d ? c : d;
+		return ((double)(a+c))/2;
+	}
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] A = {};
-		int[] B = {1};
-		System.out.println(findMedianSortedArrays(A, B));
+		int[] A = {3,4,5,7,8};
+		int[] B = {1,2,6};
+		System.out.println(findMedianSortedArrays1(A, B));
 	}
 
 }
